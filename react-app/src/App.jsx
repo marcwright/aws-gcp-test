@@ -2,10 +2,14 @@ import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import env from "react-dotenv";
 
 function App() {
   const [count, setCount] = useState(0);
   const [users, setUsers] = useState([]);
+
+  console.log("env?.API_URL", env?.API_URL ?? '', "env?.ENVIRONMENT", env?.ENVIRONMENT ?? '')
+  console.log("window?.env?.API_URL", window?.env?.API_URL ?? '', "window?.env?.ENVIRONMENT", window?.env?.ENVIRONMENT ?? '')
 
   useEffect(() => {
     getUsers();
