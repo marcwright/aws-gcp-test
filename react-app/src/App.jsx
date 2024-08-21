@@ -12,7 +12,8 @@ function App() {
   }, []);
 
   const getUsers = async () => {
-    const data = await fetch(`${'http://localhost:8080/api/users' ?? 'https://ikea-08202024-itbyql34oa-ew.a.run.app/api/users'}`);
+    // const data = await fetch(`${'http://localhost:8080/api/users' ?? 'https://ikea-08202024-itbyql34oa-ew.a.run.app/api/users'}`);
+    const data = await fetch('https://ikea-08202024-itbyql34oa-ew.a.run.app/api/users');
     const response = await data.json();
     console.log("response", response);
     setUsers(response);
