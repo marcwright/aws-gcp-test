@@ -8,16 +8,15 @@ function App() {
   const [count, setCount] = useState(0);
   const [users, setUsers] = useState([]);
 
-  console.log("env?.API_URL", env?.API_URL ?? '', "env?.ENVIRONMENT", env?.ENVIRONMENT ?? '')
-  console.log("window?.env?.API_URL", window?.env?.API_URL ?? '', "window?.env?.ENVIRONMENT", window?.env?.ENVIRONMENT ?? '')
-  console.log('import.meta.env', import.meta.env)
+  console.log('import.meta.env', import.meta.env, 'window.location.href', window.location.href)
   useEffect(() => {
     getUsers();
   }, []);
 
   const getUsers = async () => {
     // const data = await fetch(`${'http://localhost:8080/api/users' ?? 'https://ikea-08202024-itbyql34oa-ew.a.run.app/api/users'}`);
-    const data = await fetch('https://ikea-08202024-itbyql34oa-ew.a.run.app/api/users');
+    const gcpUrl = import.meta.env.PROD ? window.location.href : 'http://localhost:8080/';
+    const data = await fetch(`${gcpUrl}api/users`);
     const response = await data.json();
     console.log("response", response);
     setUsers(response);
