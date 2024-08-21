@@ -10,7 +10,7 @@ function App() {
 
   console.log("env?.API_URL", env?.API_URL ?? '', "env?.ENVIRONMENT", env?.ENVIRONMENT ?? '')
   console.log("window?.env?.API_URL", window?.env?.API_URL ?? '', "window?.env?.ENVIRONMENT", window?.env?.ENVIRONMENT ?? '')
-
+  console.log('import.meta.env', import.meta.env)
   useEffect(() => {
     getUsers();
   }, []);
