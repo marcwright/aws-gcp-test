@@ -2,8 +2,6 @@ const express = require('express');
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const cors = require('cors');
 const app = express();
-require('dotenv').config()
-console.log(process.env);
 app.use(cors());
 app.use(express.json());
 app.use(express.static("react-app/dist"));
