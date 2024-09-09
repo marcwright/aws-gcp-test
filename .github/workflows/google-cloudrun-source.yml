@@ -34,9 +34,9 @@ on:
     branches: ['main']
 
 env:
-  PROJECT_ID: 'student-001009' # TODO: update to your Google Cloud project ID
+  PROJECT_ID: 'student-001005' # TODO: update to your Google Cloud project ID
   REGION: 'europe-central2' # TODO: update to your region
-  SERVICE: 'student-001009' # TODO: update to your service name
+  SERVICE: 'student-001005' # TODO: update to your service name
 
 jobs:
   deploy:
